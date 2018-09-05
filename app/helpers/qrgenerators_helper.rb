@@ -1,0 +1,2 @@
+module QrgeneratorsHelper
+end

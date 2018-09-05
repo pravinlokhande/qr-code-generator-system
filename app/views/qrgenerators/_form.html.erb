@@ -1,0 +1,17 @@
+<%= form_with(model: qrgenerator, local: true) do |form| %>
+  <% if qrgenerator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qrgenerator.errors.count, "error") %> prohibited this qrgenerator from being saved:</h2>
+
+      <ul>
+      <% qrgenerator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

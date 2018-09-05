@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Qrgenerators</h1>
+<div>
+  <div class="form-group ">
+    <label for="forOTPSecret">Secret</label>
+    <input type="text" class="form-control" id="forOTPSecret" placeholder="please enter secret">
+  </div>
+  <div class="form-group">
+    <label for="forEmailORMobile">Another label</label>
+    <input type="text" class="form-control" id="forEmailORMobile" placeholder="please enter email/mobile">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-info">Get QR Details</button>
+  </div>
+</div>
+
+<p/>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3">Name</th>
+      <th colspan="3">Otp Secret</th>
+      <th colspan="3">Last OTP at</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qrgenerators.each do |qrgenerator| %>
+      <tr>
+        <td colspan="3"><%= qrgenerator.name %></td>
+        <td colspan="3"><%= qrgenerator.otp_secret %></td>
+        <td colspan="3"><%= qrgenerator.last_otp_at %></td>
+        <td colspan="3"><%= link_to 'Show', qrgenerator %></td>
+        <td><%= link_to 'Edit', edit_qrgenerator_path(qrgenerator) %></td>
+        <td><%= link_to 'Destroy', qrgenerator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qrgenerator', new_qrgenerator_path %>

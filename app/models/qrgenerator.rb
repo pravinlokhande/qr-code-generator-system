@@ -1,0 +1,2 @@
+class Qrgenerator < ApplicationRecord
+end

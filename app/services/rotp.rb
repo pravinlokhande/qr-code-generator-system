@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # A ruby library for generating one time passwords (HOTP & TOTP) according to RFC 4226 and RFC 6238. https://github.com/mdp/rotp
 # gem 'rotp', '~> 3.3', '>= 3.3.1'
+# gem install rotp
 # 
 require 'rotp'
 require 'erb'

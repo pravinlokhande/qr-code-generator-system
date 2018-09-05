@@ -21,7 +21,6 @@ module ROTPService
     }.strip,
 
     usage: %{
-Usage: %s [ new EMAIL | test SECRET CODE ]
 Examples:
     # create new shared secret for hello@example.com
     ruby %s hello@example.com

@@ -1,9 +1,6 @@
 require 'rqrcode'
-require "#{Rails.root}/app/services/ropt_service.rb"
-require "#{Rails.root}/app/services/rotp.rb"
 
 class QrgeneratorsController < ApplicationController
-  include ROTPExample
   before_action :set_qrgenerator, only: [:show, :edit, :update, :destroy]
   # GET /qrgenerators
   # GET /qrgenerators.json
@@ -20,9 +17,9 @@ class QrgeneratorsController < ApplicationController
   # GET /qrgenerators/1.json
   def show
     rotp_service = RotpService.new()
-    otp_secret = @qrgenerator.otp_secret
-    email = "pravin@example.com"
-    @qr_details = rotp_service.get_qr_code_details(otp_secret, email)
+    # secret = @Qrgenerator.otp_secret
+    email_or_mobile = "pravin@example.com"
+    @qr_details = rotp_service.get_qr_code_details(email_or_mobile)
     @qr = RQRCode::QRCode.new( @qr_details[:qr], :size => 10, :level => :m )
   end
 
